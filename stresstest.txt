@@ -1,0 +1,13 @@
+clearindex
+runAsHash
+search:AND computer science
+search:OR programming data
+search:computer NOT science
+search:dogs
+clearindex
+runAsAVL
+search:AND computer science
+search:OR programming data
+search:computer NOT science
+search:dogs
+
