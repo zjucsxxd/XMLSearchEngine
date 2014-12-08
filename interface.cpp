@@ -101,7 +101,8 @@ void Interface::search(string words)
 //change data structure to AVL tree
 void Interface::runAVL() //sets up data structure as AVL Tree
 {
-    clearIndex();
+    if(indexbuilt==true)
+        clearIndex();
     cout << "Building as AVL Tree" << endl << "Please wait" << endl;
     Pro1.AVL();
     indexbuilt=true;
@@ -111,7 +112,8 @@ void Interface::runAVL() //sets up data structure as AVL Tree
 //change data structure to Hash table
 void Interface::runHASH() //sets up data structure as Hash Table
 {
-    clearIndex();
+    if(indexbuilt==true)
+        clearIndex();
     cout << "Building as Hash Table" << endl << "Please wait" << endl;
     Pro1.HashTable();
     indexbuilt=true;
@@ -123,8 +125,16 @@ void Interface::runHASH() //sets up data structure as Hash Table
 void Interface::runMaintenance()
 {
     string xmlpath;
-    cout << "Please input the file path to the file you with to add to the current index" << endl << "-> ";
+    cout << "Please input the file path to the file you with to add to the current index" << endl
+         << "If you would like to return to interactive mode, type 'exit'" << endl
+         << "-> ";
     cin >> xmlpath;
+    if(xmlpath=="exit")
+    {
+        cout << "Returning to interactive mode" << endl;
+        mode = 1;
+        return getCMD();
+    }
     cout << "File path = " << xmlpath << endl;
     addFile(xmlpath);
     cout << "Returning to interactive mode" << endl;

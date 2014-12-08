@@ -1,0 +1,31 @@
+Owen Klaiss
+Jason Stumbaugh
+https://github.com/oklaiss/XMLSearchEngine
+
+Welcome to WikiSearch! This user manual documents how to search using this search engine as well as how to use the maintenance and stress-test modes. Note* you can always access a condensed version of this user manual by entering ‘help’ at any time.
+There are three modes. They are as follows.
+
+Interactive mode:
+This mode is the normal operating mode for WikiSearch. Here you will be able to enter search queries, change index data structures, change operating modes and clear the index.
+These are the basic commands and their definitions:
+‘search:’ Type this followed immediately by your query.
+‘AND ’ use this to combine all results from multiple arguments
+‘OR ‘ use this to get results only in one of the arguments
+‘NOT ‘ use this to exclude results
+A properly formatted query would look something like this:
+search:AND kitten cats NOT dogs
+
+Other commands are also useful in operating WikiSearch: 
+‘SetMode’ will allow you to enter the maintenance or stress-test modes, more on this 	later.
+‘RunAsAVL’ will build the index as an AVL Tree. 
+‘RunAsHash’ will build the index as a Hash Table. 
+‘ClearIndex’ will clear the index currently held in memory. 
+‘Quit’ will exit the program. 
+
+Now we will talk about ’SetMode’. When you type ‘SetMode’ in WikiSearch, you will see a menu asking you to pick between the program’s three modes; ‘interactive’(which we have already covered), ‘maintenance’, or ‘stress-test’.
+
+Maintenance mode:
+This mode will allow you to add files to the index already stores in memory. This will only accept properly formatted XML files. After entering ‘maintenance’ mode, the program will prompt for the file path to the xml file you wish to index. Enter the file path and the file will be parsed and added to the index. You will be then be returned to interactive mode.
+
+Stress-Test mode:
+Stress-test mode is designed to be able to rapidly execute multiple commands and record how long they each take. Each line of the file must contain a command and its arguments if applicable. Each command will be timed to the nearest millisecond. You will be prompted to enter the file path to the .txt file containing the commands to begin executing. After the commands are finished executing, you will be returned to interactive mode. 
